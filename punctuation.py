@@ -33,8 +33,8 @@ with open(bookname + '.txt','r') as file:
 
 include = set(string.punctuation)
 
-def getPunctuation(s):
-   return ''.join(ch for ch in s if ch in include)
+def getPunctuation(text):
+   return ''.join(ch for ch in text if ch in include)
 
 punct = getPunctuation(txt);
 
