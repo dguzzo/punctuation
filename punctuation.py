@@ -1,10 +1,7 @@
 import string
 import math
 import sys
-from PIL import Image
-from PIL import ImageFont
-from PIL import ImageDraw
-
+from PIL import Image, ImageFont, ImageDraw
 
 ## VARIABLES
 # size of output canvas in pixels
@@ -31,9 +28,8 @@ if (len(sys.argv) > 1):
 else:
    bookname = 'ulysses'
 
-file = open(bookname + '.txt','r')
-txt = file.read()
-file.close()
+with open(bookname + '.txt','r') as file:
+    txt = file.read()
 
 include = set(string.punctuation)
 
@@ -43,9 +39,8 @@ def getPunctuation(s):
 punct = getPunctuation(txt);
 
 # file = open('blood-punct.txt','w')
-file = open(bookname + '-punct.txt','w')
-file.write(punct)
-file.close()
+with open(bookname + '-punct.txt','w') as file:
+    file.write(punct)
 
 deltaW = (canvasWidth - trim*2)/symbolsPerLine
 deltaH = (canvasHeight - trim*2)/linesOfText
