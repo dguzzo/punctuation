@@ -1,5 +1,4 @@
 import string
-import math
 import sys
 from PIL import Image, ImageFont, ImageDraw
 
